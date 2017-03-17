@@ -2,7 +2,7 @@ package LocalServer;
 
 import LocalServer.Handlers.MotdHandler;
 import LocalServer.Handlers.UserHandler;
-import Main.SpigotServerManager;
+import SpigotServerManager.SpigotServerManager;
 import fi.iki.elonen.router.RouterNanoHTTPD;
 
 import java.io.IOException;

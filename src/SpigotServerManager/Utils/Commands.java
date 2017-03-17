@@ -1,4 +1,4 @@
-package Main.Utils;
+package SpigotServerManager.Utils;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.plugin.java.JavaPlugin;

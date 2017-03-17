@@ -1,6 +1,6 @@
-package Main.EventHandler;
+package SpigotServerManager.EventHandler;
 
-import Main.Utils.Plugin;
+import SpigotServerManager.Utils.Plugin;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

@@ -3,7 +3,7 @@ package LocalServer.Handlers;
 import LocalServer.Utils.HTTPHandler;
 import LocalServer.Utils.IHTTPGetBody;
 import LocalServer.Utils.UnsupportedMimeException;
-import Main.Utils.PropertiesFiler;
+import SpigotServerManager.Utils.PropertiesFiler;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;

@@ -1,6 +1,6 @@
 package LocalServer.Utils;
 
-import Main.SpigotServerManager;
+import SpigotServerManager.SpigotServerManager;
 
 import java.util.logging.Logger;
 

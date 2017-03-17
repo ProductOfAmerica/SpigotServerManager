@@ -1,6 +1,6 @@
-package Main.Config;
+package SpigotServerManager.Config;
 
-import Main.Utils.Plugin;
+import SpigotServerManager.Utils.Plugin;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

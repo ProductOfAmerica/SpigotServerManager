@@ -1,6 +1,6 @@
-package Main.Commands;
+package SpigotServerManager.Commands;
 
-import Main.Utils.Commands;
+import SpigotServerManager.Utils.Commands;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;

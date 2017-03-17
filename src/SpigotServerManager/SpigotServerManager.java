@@ -1,12 +1,12 @@
-package Main;
+package SpigotServerManager;
 
 import LocalServer.LocalServer;
-import Main.Commands.CommandDisable;
-import Main.Commands.CommandEnable;
-import Main.Commands.CommandHandler;
-import Main.Commands.CommandSSM;
-import Main.Config.ConfigSetup;
-import Main.EventHandler.PlayerEvents;
+import SpigotServerManager.Commands.CommandDisable;
+import SpigotServerManager.Commands.CommandEnable;
+import SpigotServerManager.Commands.CommandHandler;
+import SpigotServerManager.Commands.CommandSSM;
+import SpigotServerManager.Config.ConfigSetup;
+import SpigotServerManager.EventHandler.PlayerEvents;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
