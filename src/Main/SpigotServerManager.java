@@ -48,6 +48,10 @@ public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
         getCommand("ssmenable").setExecutor(new CommandEnable(this));
         Collection<? extends Player> wef = getServer().getOnlinePlayers();
         wef.forEach(player -> {
+//            if(player.hasPermission("node.here"){
+//
+//            }
+
             if (player != null && player.isOp())
                 player.sendMessage(ChatColor.RED + "Disabled SpigotServerManager.");
         });
