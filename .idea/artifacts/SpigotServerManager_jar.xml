@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SpigotServerManager:jar">
+    <output-path>$USER_HOME$/Desktop/Spigot-Local/plugins</output-path>
+    <root id="archive" name="SpigotServerManager.jar">
+      <element id="module-output" name="SpigotServerManager" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/spigot-api-1.11.2-R0.1-20170221.230203-60.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/plugin.yml" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/json-simple-1.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/nanohttpd-2.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/nanohttpd-apache-fileupload-2.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/nanohttpd-nanolets-2.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/nanohttpd-samples-2.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/nanohttpd-webserver-2.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/.libs/nanohttpd-websocket-2.2.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

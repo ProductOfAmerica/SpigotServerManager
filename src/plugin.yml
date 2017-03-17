@@ -1,0 +1,17 @@
+name: SpigotServerManager
+version: 1.0.0
+load: STARTUP
+prefix: ServrMngr
+author: godlypowerr
+description: Controls your servers remotely.
+main: Main.SpigotServerManager
+commands:
+  ssm:
+    description: Gives you a kit
+    usage: Use this command by typing /kit
+  ssmdisable:
+    description: ssmdisable
+    usage: Use this command by typing /ssmdisable
+  ssmenable:
+      description: ssmenable
+      usage: Use this command by typing /ssmenable
