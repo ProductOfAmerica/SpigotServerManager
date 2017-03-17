@@ -1,4 +1,4 @@
-package LocalServer.Utils;
+package EmbeddedServer.Utils;
 
 import fi.iki.elonen.NanoHTTPD;
 

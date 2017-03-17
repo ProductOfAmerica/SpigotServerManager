@@ -1,8 +1,8 @@
-package LocalServer.Handlers;
+package EmbeddedServer.Handlers;
 
-import LocalServer.Utils.HTTPHandler;
-import LocalServer.Utils.IHTTPGetBody;
-import LocalServer.Utils.UnsupportedMimeException;
+import EmbeddedServer.Utils.HTTPHandler;
+import EmbeddedServer.Utils.IHTTPGetBody;
+import EmbeddedServer.Utils.UnsupportedMimeException;
 import SpigotServerManager.Utils.PropertiesFiler;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;

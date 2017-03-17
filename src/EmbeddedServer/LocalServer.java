@@ -1,7 +1,7 @@
-package LocalServer;
+package EmbeddedServer;
 
-import LocalServer.Handlers.MotdHandler;
-import LocalServer.Handlers.UserHandler;
+import EmbeddedServer.Handlers.MotdHandler;
+import EmbeddedServer.Handlers.UserHandler;
 import SpigotServerManager.SpigotServerManager;
 import fi.iki.elonen.router.RouterNanoHTTPD;
 

@@ -1,4 +1,4 @@
-package LocalServer.Utils;
+package EmbeddedServer.Utils;
 
 /**
  * Created by Lee on 3/16/2017.

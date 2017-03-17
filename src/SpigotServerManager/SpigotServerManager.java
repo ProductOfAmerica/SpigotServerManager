@@ -1,6 +1,6 @@
 package SpigotServerManager;
 
-import LocalServer.LocalServer;
+import EmbeddedServer.LocalServer;
 import SpigotServerManager.Commands.CommandDisable;
 import SpigotServerManager.Commands.CommandEnable;
 import SpigotServerManager.Commands.CommandHandler;
