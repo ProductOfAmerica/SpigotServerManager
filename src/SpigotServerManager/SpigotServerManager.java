@@ -1,6 +1,7 @@
 package SpigotServerManager;
 
 import EmbeddedServer.LocalServer;
+import EmbeddedServer.Utils.Logger.SSMLogger;
 import SpigotServerManager.Command.Commands.CommandDisable;
 import SpigotServerManager.Command.Commands.CommandEnable;
 import SpigotServerManager.Command.Commands.CommandHandler;
@@ -26,11 +27,13 @@ public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
         instance = this; // NOTHING GOES BEFORE THIS
 
         new InitializeConfig(); // Initialize the Config.yml file
+
+        SSMLogger.setDebugging(getConfig().getBoolean(Settings.debug.name())); // Set if we should log to console or not
     }
 
     @Override
     public void onEnable() {
-        localServer = new LocalServer(getConfig().getInt(Settings.port.name())).startServer(); //TODO Fix the port, accept port from config file.
+        localServer = new LocalServer(getConfig().getInt(Settings.port.name())).startServer();
 
         getServer().getPluginManager().registerEvents(new PlayerEvents(), this);
         getCommand("ssm").setExecutor(new CommandSSM());

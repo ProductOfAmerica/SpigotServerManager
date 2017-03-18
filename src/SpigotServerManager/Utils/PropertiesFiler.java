@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * Created by Lee on 3/16/2017.
  */
-public class PropertiesFiler extends Plugin {
+public class PropertiesFiler extends SSMInstance {
     private Path path;
 
     public PropertiesFiler() {

@@ -1,7 +1,7 @@
 package SpigotServerManager.Config;
 
 import EmbeddedServer.Utils.Logger.SSMLogger;
-import SpigotServerManager.Utils.Plugin;
+import SpigotServerManager.Utils.SSMInstance;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by Lee on 3/7/2017.
  */
-public class InitializeConfig extends Plugin {
+public class InitializeConfig extends SSMInstance {
     public InitializeConfig() {
         deleteUnusedConfig();
         addDefaults();

@@ -1,6 +1,5 @@
 package EmbeddedServer.Utils.Logger;
 
-import SpigotServerManager.Utils.SSMInstance;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -8,7 +7,7 @@ import org.bukkit.entity.Player;
 /**
  * Created by Lee on 3/17/2017.
  */
-public class SSMLogger extends SSMInstance {
+public class SSMLogger {
     private static final String PREFIX = ChatColor.AQUA + "[SSM] ";
     private static boolean debug = true;
 
@@ -32,7 +31,7 @@ public class SSMLogger extends SSMInstance {
     }
 
     public static void sendPlayerMessage(ChatColor color, String playerName, String message) {
-        sendPlayerMsg(color, getInstance().getServer().getPlayer(playerName), message);
+        sendPlayerMsg(color, Bukkit.getServer().getPlayer(playerName), message);
     }
 
 
@@ -64,14 +63,11 @@ public class SSMLogger extends SSMInstance {
      * Private accessors
      */
     private static void sendConsoleMessage(LogLevel level, String msg) {
-        if (debug)
-            getInstance().getServer().getConsoleSender().
-                    sendMessage(PREFIX + level.getChatColor() + level.getPrefix() + ChatColor.GRAY + msg);
+        Bukkit.getConsoleSender().sendMessage(PREFIX + level.getChatColor() + level.getPrefix() + ChatColor.GRAY + msg);
     }
 
     private static void broadcastMsg(ChatColor color, String message) {
-        if (debug)
-            Bukkit.broadcastMessage(PREFIX + color + message); //Ex: "[SSM] message goes here"
+        Bukkit.broadcastMessage(PREFIX + color + message); //Ex: "[SSM] message goes here"
     }
 
     private static void sendPlayerMsg(ChatColor color, Player player, String message) {
@@ -82,7 +78,7 @@ public class SSMLogger extends SSMInstance {
     /**
      * Setter
      */
-    public static void setDebug(boolean debug) {
+    public static void setDebugging(boolean debug) {
         SSMLogger.debug = debug;
     }
 }
