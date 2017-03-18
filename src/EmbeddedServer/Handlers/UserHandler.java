@@ -1,6 +1,5 @@
 package EmbeddedServer.Handlers;
 
-import EmbeddedServer.Utils.HTTPHandler;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -12,30 +11,34 @@ import static fi.iki.elonen.NanoHTTPD.*;
 import static fi.iki.elonen.NanoHTTPD.Response.Status;
 import static fi.iki.elonen.router.RouterNanoHTTPD.UriResource;
 
+@SuppressWarnings("unchecked")
 public class UserHandler extends HTTPHandler {
-    public UserHandler() {
-        setStatus(Status.OK);
-    }
+    public static final String ROUTE = "/user";
 
     @Override
     public Response get(UriResource uriResource, Map<String, String> urlParams, IHTTPSession session) {
-        JSONObject obj = new JSONObject();
+        JSONObject parentJsonObj = new JSONObject();
         JSONArray players = new JSONArray();
 
         for (Player p : getInstance().getServer().getOnlinePlayers()) {
-            LinkedHashMap<String, String> m1 = new LinkedHashMap<>();
+            LinkedHashMap<String, String> playerInfoObjects = new LinkedHashMap<>();
 
-            m1.put("name", p.getName());
-            m1.put("custom_name", p.getCustomName());
-            m1.put("display_name", p.getDisplayName());
-            m1.put("player_list_name", p.getPlayerListName());
-            m1.put("host_address", p.getAddress().getAddress().getHostAddress());
-            players.add(m1);
+            // Add player's info to the JSON object
+            //TODO FIX: add more to the player info later??
+            playerInfoObjects.put("name", p.getName());
+            playerInfoObjects.put("custom_name", p.getCustomName());
+            playerInfoObjects.put("display_name", p.getDisplayName());
+            playerInfoObjects.put("player_list_name", p.getPlayerListName());
+            playerInfoObjects.put("host_address", p.getAddress().getAddress().getHostAddress());
+
+            players.add(playerInfoObjects); // Add the objects into the player array
         }
 
-        obj.put("OnlinePlayers", players);
+        parentJsonObj.put("OnlinePlayers", players); // Add the player array into the outer JSON object
 
-        setText(obj.toJSONString());
+        setText(parentJsonObj.toJSONString()); // Set body content
+
+        setStatus(Status.OK); // Set status to OK
 
         return newFixedLengthResponse(getStatus(), getMimeType(), getStrToByte().getInput(), getStrToByte().getSize());
     }

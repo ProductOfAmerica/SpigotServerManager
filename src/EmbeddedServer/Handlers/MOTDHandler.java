@@ -1,11 +1,8 @@
 package EmbeddedServer.Handlers;
 
-import EmbeddedServer.Utils.HTTPHandler;
-import EmbeddedServer.Utils.IHTTPGetBody;
+import EmbeddedServer.Utils.Logger.SSMLogger;
 import EmbeddedServer.Utils.UnsupportedMimeException;
 import SpigotServerManager.Utils.PropertiesFiler;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
@@ -19,24 +16,24 @@ import static fi.iki.elonen.router.RouterNanoHTTPD.UriResource;
 /**
  * Created by Lee on 3/16/2017.
  */
-public class MotdHandler extends HTTPHandler {
+public class MOTDHandler extends HTTPHandler {
+    public static final String ROUTE = "/motd";
     private final String MOTD = "motd";
 
     @Override
     public Response post(UriResource uriResource, Map<String, String> urlParams, IHTTPSession session) {
         try {
-            String body = new IHTTPGetBody().getBody(session);
-            String motd = ((JSONObject) new JSONParser().parse(body)).get(MOTD).toString();
+            String motd = getBody(session).get(MOTD).toString();
 
-            PropertiesFiler propertiesFiler = new PropertiesFiler(getInstance());
+            PropertiesFiler propertiesFiler = new PropertiesFiler();
             propertiesFiler.setProperty(MOTD, motd);
 
             setStatus(Status.OK);
-            getLogger().info(String.format("Successfully changed the MOTD to: \"%s\"", motd));
-            getLogger().info("Restart your server for changed to take effect.");
+            SSMLogger.logOk(String.format("Successfully changed the MOTD to: \"%s\". " +
+                    "Restart your server for changed to take effect.", motd));
         } catch (ParseException | UnsupportedMimeException | IOException e) {
-            e.printStackTrace();
-            setStatus(Status.NOT_ACCEPTABLE);
+            SSMLogger.logSevere(String.format("\"%s %s\": %s", session.getMethod(), session.getUri(), e.getMessage()));
+            setStatus(Status.BAD_REQUEST);
         }
 
         return super.post(uriResource, urlParams, session);

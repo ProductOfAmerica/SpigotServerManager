@@ -1,7 +1,5 @@
 package SpigotServerManager.Utils;
 
-import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,8 +13,7 @@ import java.util.Properties;
 public class PropertiesFiler extends Plugin {
     private Path path;
 
-    public PropertiesFiler(JavaPlugin ssm) {
-        super(ssm);
+    public PropertiesFiler() {
         path = Paths.get(ssm.getDataFolder().getParentFile().getAbsolutePath())
                 .getParent().resolve("server.properties");
     }

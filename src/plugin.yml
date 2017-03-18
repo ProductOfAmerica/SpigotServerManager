@@ -1,7 +1,7 @@
 name: SpigotServerManager
 version: 1.0.0
 load: STARTUP
-prefix: ServrMngr
+prefix: SSM
 author: godlypowerr
 description: Controls your servers remotely.
 main: SpigotServerManager.SpigotServerManager

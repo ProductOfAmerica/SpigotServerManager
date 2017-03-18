@@ -1,4 +1,4 @@
-package SpigotServerManager.Commands;
+package SpigotServerManager.Command.Commands;
 
 import org.bukkit.command.CommandSender;
 
