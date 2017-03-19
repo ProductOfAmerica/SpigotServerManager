@@ -1,0 +1,43 @@
+name: SpigotServerManager
+version: 1.0.0
+load: STARTUP
+prefix: SSM
+author: godlypowerr
+description: Controls your server remotely via an HTTP serverlet.
+main: SpigotServerManager.SpigotServerManager
+
+commands:
+   ssm:
+     description: Enable or disable your SSM.
+     permission: ssm.version
+     permission-message: "§cYou do not have access to SSM!"
+     usage: "\n\
+     /ssm  -  Display the SSM version.\n\
+     /ssm info  -  Display some SSM information.\n\
+     /ssm enable  -  Enable the SSM.\n\
+     /ssm disable  -  Disable the SSM."
+
+permissions:
+  ssm.*:
+    description: Gives access to all SSM commands
+    children:
+      ssm.version: true
+      ssm.info: true
+      ssm.enable: true
+      ssm.disable: true
+
+  ssm.version:
+    description: Displays the version of the SSM plugin.
+    default: true
+  ssm.info:
+    description: Displays information about the SSM.
+    children:
+      ssm.version: true
+  ssm.enable:
+    description: Enables the SSM. Check config.yml for settings.
+    children:
+      ssm.info: true
+  ssm.disable:
+    description: Disables the SSM.
+    children:
+      ssm.info: true

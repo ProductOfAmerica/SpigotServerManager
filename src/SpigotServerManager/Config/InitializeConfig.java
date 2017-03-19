@@ -1,6 +1,5 @@
 package SpigotServerManager.Config;
 
-import EmbeddedServer.Utils.Logger.SSMLogger;
 import SpigotServerManager.Utils.SSMInstance;
 
 import java.util.HashMap;
@@ -36,7 +35,7 @@ public class InitializeConfig extends SSMInstance {
             try {
                 Settings.valueOf(entry.getKey());
             } catch (IllegalArgumentException e) {
-                SSMLogger.logWarning("Removing (\"" + entry.getKey() + "\": \""
+                logWarning("Removing (\"" + entry.getKey() + "\": \""
                         + entry.getValue() + "\") from the config file.");
                 ssm.getConfig().set(entry.getKey(), null);
             }

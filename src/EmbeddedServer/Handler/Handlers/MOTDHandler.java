@@ -1,6 +1,7 @@
-package EmbeddedServer.Handlers;
+package EmbeddedServer.Handler.Handlers;
 
-import EmbeddedServer.Utils.Logger.SSMLogger;
+import EmbeddedServer.Handler.HTTPHandler;
+import SpigotServerManager.Utils.Logger.SSMLogger;
 import EmbeddedServer.Utils.UnsupportedMimeException;
 import SpigotServerManager.Utils.PropertiesFiler;
 import org.json.simple.parser.ParseException;
@@ -18,7 +19,7 @@ import static fi.iki.elonen.router.RouterNanoHTTPD.UriResource;
  */
 public class MOTDHandler extends HTTPHandler {
     public static final String ROUTE = "/motd";
-    private final String MOTD = "motd";
+    private static final String MOTD = "motd";
 
     @Override
     public Response post(UriResource uriResource, Map<String, String> urlParams, IHTTPSession session) {
@@ -32,8 +33,7 @@ public class MOTDHandler extends HTTPHandler {
             SSMLogger.logOk(String.format("Successfully changed the MOTD to: \"%s\". " +
                     "Restart your server for changed to take effect.", motd));
         } catch (ParseException | UnsupportedMimeException | IOException e) {
-            SSMLogger.logSevere(String.format("\"%s %s\": %s", session.getMethod(), session.getUri(), e.getMessage()));
-            setStatus(Status.BAD_REQUEST);
+            logBadRequest(session, e);
         }
 
         return super.post(uriResource, urlParams, session);

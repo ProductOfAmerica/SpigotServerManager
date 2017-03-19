@@ -1,70 +1,55 @@
 package EmbeddedServer;
 
-import EmbeddedServer.Handlers.MOTDHandler;
-import EmbeddedServer.Handlers.MsgHandler;
-import EmbeddedServer.Handlers.StopHandler;
-import EmbeddedServer.Handlers.UserHandler;
-import EmbeddedServer.Utils.Logger.SSMLogger;
+import EmbeddedServer.Handler.Handlers.*;
+import SpigotServerManager.Utils.Logger.SSMLogger;
 import fi.iki.elonen.router.RouterNanoHTTPD;
 
 import java.io.IOException;
 
 public class LocalServer extends RouterNanoHTTPD {
-    private static boolean isLocalTest = false; //REMOVE
-
-    public static void main(String[] args) throws IOException { //REMOVE
-        isLocalTest = true;
-        LocalServer server = new LocalServer(9090);
-        try {
-            server.start(5000, false);
-        } catch (IOException var3) {
-            System.err.println("Couldn\'t start server:\n" + var3);
-            System.exit(-1);
-        }
-    }
+    private final String username, password;
 
     /**
      * Create the server instance
      */
-    public LocalServer(int port) {
+    public LocalServer(int port, String username, String password) {
         super(port);
+        this.username = username;
+        this.password = password;
     }
 
     public LocalServer startServer() {
         try {
             addMappings();
             start(5000, false);
-            if (!isLocalTest) //REMOVE
-                SSMLogger.log("Running on http://localhost:" + getListeningPort() + "/");
-            else //REMOVE
-                System.out.println("Running on http://localhost:" + getListeningPort() + "/"); //REMOVE
+            SSMLogger.log("Running on http://localhost:" + getListeningPort() + "/");
         } catch (IOException var3) {
-            if (!isLocalTest) //REMOVE
-                SSMLogger.logSevere("Couldn't start server");
-            else //REMOVE
-                System.out.println("Couldn't start server"); //REMOVE
+            SSMLogger.logSevere("Couldn't start server");
         }
         return this;
     }
 
     public void stopServer() {
-        if (!isLocalTest) //REMOVE
-            SSMLogger.logWarning("You will not be able to connect to your server any longer.");
+        SSMLogger.logWarning("You will not be able to connect to SSM any longer.");
         stop();
     }
 
     /**
      * Add the routes Every route is an absolute path Parameters starts with ":"
-     * Handler class should implement @UriResponder interface If the handler not
-     * implement UriResponder interface - toString() is used
+     * Handler class should implement @UriResponder interface
      */
     @Override
     public void addMappings() {
-        super.addMappings(); // Add default mappings
-        addRoute(UserHandler.ROUTE, UserHandler.class); // GET /user
-        addRoute(MOTDHandler.ROUTE, MOTDHandler.class); // PUSH /motd
-        addRoute(MsgHandler.ROUTE1, MsgHandler.class);  // PUSH /msg
-        addRoute(MsgHandler.ROUTE2, MsgHandler.class);  // PUSH /say
-        addRoute(StopHandler.ROUTE, StopHandler.class); // DELETE /stop
+        super.addMappings(); // Add default routes
+        removeRoute("/"); // Remove the default route for "/"
+        removeRoute("/index.html"); // Remove the default route for "/index.html"
+        addRoute("/", HomePageHandler.class);           // Add default route
+        addRoute("/index.html", HomePageHandler.class); // Add default route
+        addRoute(UserHandler.ROUTE, UserHandler.class); // Add route: GET /user
+        addRoute(MOTDHandler.ROUTE, MOTDHandler.class); // Add route: PUSH /motd
+        addRoute(MsgHandler.ROUTE1, MsgHandler.class);  // Add route: PUSH /msg
+        addRoute(MsgHandler.ROUTE2, MsgHandler.class);  // Add route: PUSH /say
+        addRoute(StopHandler.ROUTE, StopHandler.class); // Add route: DELETE /stop
+        addRoute(StopHandler.ROUTE2, StopHandler.class);// Add route: DELETE /restart
     }
 }

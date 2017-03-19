@@ -1,14 +1,15 @@
-package EmbeddedServer.Utils.Logger;
+package SpigotServerManager.Utils.Logger;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
  * Created by Lee on 3/17/2017.
  */
 public class SSMLogger {
-    private static final String PREFIX = ChatColor.AQUA + "[SSM] ";
+    private static final String PREFIX = "§f[§bS§6S§cM§f] ";
     private static boolean debug = true;
 
     /**
@@ -34,28 +35,42 @@ public class SSMLogger {
         sendPlayerMsg(color, Bukkit.getServer().getPlayer(playerName), message);
     }
 
+    public static void sendPlayerDebugMessage(ChatColor color, Player player, String message) {
+        if (debug)
+            sendPlayerMsg(color, player, message);
+    }
+
+    public static void sendSenderMessage(CommandSender sender, String message) {
+        sender.sendMessage(PREFIX + ChatColor.WHITE + message);
+    }
+
 
     /**
      * Loggers
      */
     public static void logSevere(String msg) { // Ex: "[SSM] SEVERE: severe test"
-        sendConsoleMessage(LogLevel.SEVERE, msg);
+        if (debug)
+            sendConsoleMessage(LogLevel.SEVERE, msg);
     }
 
     public static void logError(String msg) { // Ex: "[SSM] ERROR: error test"
-        sendConsoleMessage(LogLevel.ERROR, msg);
+        if (debug)
+            sendConsoleMessage(LogLevel.ERROR, msg);
     }
 
     public static void logWarning(String msg) { // Ex: "[SSM] WARNING: warning test"
-        sendConsoleMessage(LogLevel.WARNING, msg);
+        if (debug)
+            sendConsoleMessage(LogLevel.WARNING, msg);
     }
 
     public static void logOk(String msg) { // Ex: "[SSM] OK: ok test"
-        sendConsoleMessage(LogLevel.OK, msg);
+        if (debug)
+            sendConsoleMessage(LogLevel.OK, msg);
     }
 
     public static void log(String msg) { // Ex: "[SSM] log test"
-        sendConsoleMessage(LogLevel.PLAIN, msg);
+        if (debug)
+            sendConsoleMessage(LogLevel.PLAIN, msg);
     }
 
 
@@ -71,14 +86,14 @@ public class SSMLogger {
     }
 
     private static void sendPlayerMsg(ChatColor color, Player player, String message) {
-        if (debug && player != null)
+        if (player != null)
             player.sendMessage(PREFIX + color + message);
     }
 
     /**
      * Setter
      */
-    public static void setDebugging(boolean debug) {
-        SSMLogger.debug = debug;
+    public static void setDebugging(boolean shouldDebug) {
+        debug = shouldDebug;
     }
 }

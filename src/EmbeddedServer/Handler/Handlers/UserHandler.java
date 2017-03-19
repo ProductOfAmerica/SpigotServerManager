@@ -1,5 +1,6 @@
-package EmbeddedServer.Handlers;
+package EmbeddedServer.Handler.Handlers;
 
+import EmbeddedServer.Handler.HTTPHandler;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

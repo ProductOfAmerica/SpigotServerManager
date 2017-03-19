@@ -1,4 +1,4 @@
-package EmbeddedServer.Utils.Logger;
+package SpigotServerManager.Utils.Logger;
 
 import org.bukkit.ChatColor;
 

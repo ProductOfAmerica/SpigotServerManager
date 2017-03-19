@@ -1,6 +1,7 @@
-package EmbeddedServer.Handlers;
+package EmbeddedServer.Handler.Handlers;
 
-import EmbeddedServer.Utils.Logger.SSMLogger;
+import EmbeddedServer.Handler.HTTPHandler;
+import SpigotServerManager.Utils.Logger.SSMLogger;
 import org.bukkit.ChatColor;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -41,8 +42,7 @@ public class MsgHandler extends HTTPHandler {
 
             setStatus(Response.Status.OK); // Everything worked
         } catch (Exception e) {
-            SSMLogger.logSevere(String.format("\"%s %s\": %s", session.getMethod(), session.getUri(), e.getMessage()));
-            setStatus(Response.Status.BAD_REQUEST);
+            logBadRequest(session, e);
         }
 
         return super.post(uriResource, urlParams, session);
