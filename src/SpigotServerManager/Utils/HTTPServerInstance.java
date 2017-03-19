@@ -12,6 +12,9 @@ public abstract class HTTPServerInstance extends SSMInstance {
     private static EmbeddedServer embeddedServer;
     private static boolean isRunning;
 
+    /**
+     * Start the server
+     */
     public static void startServer() {
         if (!isRunning()) {
             embeddedServer = new EmbeddedServer(
@@ -28,6 +31,17 @@ public abstract class HTTPServerInstance extends SSMInstance {
         }
     }
 
+    public static void startServer(CommandSender sender) {
+        if (!isRunning())
+            startServer();
+        else
+            sendSenderMessage(sender, "§cSSM is already running!! Access it at: " + getUrl());
+    }
+
+
+    /**
+     * Stop the server
+     */
     public static void stopServer() {
         if (isRunning()) {
             embeddedServer.stopServer();
@@ -40,18 +54,11 @@ public abstract class HTTPServerInstance extends SSMInstance {
         }
     }
 
-    public static void startServer(CommandSender sender) {
-        if (isRunning())
-            sendSenderMessage(sender, "§cSSM is already running!! Access it at: " + getUrl());
-        else
-            startServer();
-    }
-
     public static void stopServer(CommandSender sender) {
-        if (!isRunning())
-            sendSenderMessage(sender, "§cSSM is already stopped!!");
-        else
+        if (isRunning())
             stopServer();
+        else
+            sendSenderMessage(sender, "§cSSM is already stopped!!");
     }
 
     protected static boolean isRunning() {

@@ -3,7 +3,6 @@ package SpigotServerManager;
 import SpigotServerManager.Command.CommandHandler;
 import SpigotServerManager.Config.InitializeConfig;
 import SpigotServerManager.Config.Settings;
-import SpigotServerManager.EventHandlers.PlayerEvents;
 import SpigotServerManager.Utils.HTTPServerInstance;
 import SpigotServerManager.Utils.Logger.SSMLogger;
 import org.bukkit.command.Command;
@@ -19,18 +18,14 @@ public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
     private boolean isUpToDate = true;
 
     @Override
-    public void onLoad() {
+    public void onEnable() {
         instance = this; // THIS MUST BE FIRST
 
         new InitializeConfig(); // Initializes the Config.yml file
 
         SSMLogger.setDebugging(getConfig().getBoolean(Settings.debug.name())); // Set if we should log to console or not
-    }
 
-    @Override
-    public void onEnable() {
-        HTTPServerInstance.startServer();
-        getServer().getPluginManager().registerEvents(new PlayerEvents(), this);
+        HTTPServerInstance.startServer(); // Start the SSM
     }
 
     @Override
