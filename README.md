@@ -1,4 +1,7 @@
-# SpigotServerManager ![alt text](https://image.flaticon.com/icons/png/64/273/273565.png "Logo Title Text 1")
+<h1 align="center">
+SpigotServerManager
+  <img src="https://image.flaticon.com/icons/png/64/273/273565.png" style="vertical-align: middle;">
+</h1>
 SpigotServerManager (SSM) is a Spigot plugin for Minecraft servers which manages your server via HTTP requests.
 
 ### Commands:
