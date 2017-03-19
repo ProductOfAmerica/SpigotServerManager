@@ -1,6 +1,6 @@
 package SpigotServerManager.Utils;
 
-import EmbeddedServer.LocalServer;
+import EmbeddedServer.EmbeddedServer;
 import SpigotServerManager.Config.Settings;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -9,12 +9,12 @@ import org.bukkit.command.CommandSender;
  * Created by Lee on 3/18/2017.
  */
 public abstract class HTTPServerInstance extends SSMInstance {
-    private static LocalServer localServer;
+    private static EmbeddedServer embeddedServer;
     private static boolean isRunning;
 
     public static void startServer() {
         if (!isRunning()) {
-            localServer = new LocalServer(
+            embeddedServer = new EmbeddedServer(
                     ssm.getConfig().getInt(Settings.port.name()),
                     ssm.getConfig().getString(Settings.username.name()),
                     ssm.getConfig().getString(Settings.password.name())
@@ -30,7 +30,7 @@ public abstract class HTTPServerInstance extends SSMInstance {
 
     public static void stopServer() {
         if (isRunning()) {
-            localServer.stopServer();
+            embeddedServer.stopServer();
 
             ssm.getServer().getOnlinePlayers().forEach(player -> {
                 if (player != null && player.hasPermission("ssm.info"))
@@ -59,6 +59,6 @@ public abstract class HTTPServerInstance extends SSMInstance {
     }
 
     protected static String getUrl() {
-        return "http://localhost:" + localServer.getListeningPort();
+        return "http://localhost:" + embeddedServer.getListeningPort();
     }
 }

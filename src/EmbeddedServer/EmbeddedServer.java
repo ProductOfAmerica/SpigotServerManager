@@ -6,19 +6,19 @@ import fi.iki.elonen.router.RouterNanoHTTPD;
 
 import java.io.IOException;
 
-public class LocalServer extends RouterNanoHTTPD {
+public class EmbeddedServer extends RouterNanoHTTPD {
     private final String username, password;
 
     /**
      * Create the server instance
      */
-    public LocalServer(int port, String username, String password) {
+    public EmbeddedServer(int port, String username, String password) {
         super(port);
         this.username = username;
         this.password = password;
     }
 
-    public LocalServer startServer() {
+    public EmbeddedServer startServer() {
         try {
             addMappings();
             start(5000, false);
