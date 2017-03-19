@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="center" style="vertical-align: middle;">
 SpigotServerManager
   <img src="https://image.flaticon.com/icons/png/32/273/273565.png" style="vertical-align: middle;">
 </h1>
