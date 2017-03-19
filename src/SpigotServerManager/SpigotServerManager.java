@@ -20,11 +20,9 @@ public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
     @Override
     public void onEnable() {
         instance = this; // THIS MUST BE FIRST
-
         new InitializeConfig(); // Initializes the Config.yml file
 
         SSMLogger.setDebugging(getConfig().getBoolean(Settings.debug.name())); // Set if we should log to console or not
-
         HTTPServerInstance.startServer(); // Start the SSM
     }
 

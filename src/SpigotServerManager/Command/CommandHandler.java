@@ -12,7 +12,7 @@ public class CommandHandler extends SSMInstance {
     public boolean executeCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length > 0 && args[0] != null) { // Contains more than one param. Ex: "/ssm anotherCommand"
             try {
-                Permissions secondCommand = Permissions.valueOf(args[0]);
+                CommandPermission secondCommand = CommandPermission.valueOf(args[0]);
                 switch (secondCommand) {
                     case info:
                         if (checkForPermissions(sender, secondCommand.permission()))
@@ -46,17 +46,5 @@ public class CommandHandler extends SSMInstance {
 
         sendSenderMessage(sender, "§cInsufficient permissions!");
         return false;
-    }
-
-    private enum Permissions {
-        info,
-        enable,
-        disable;
-
-        private static final String CMD = "ssm";
-
-        final String permission() {
-            return CMD + "." + name();
-        }
     }
 }

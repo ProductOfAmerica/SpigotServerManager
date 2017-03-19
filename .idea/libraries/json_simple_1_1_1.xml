@@ -3,11 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/.libs/json-simple-1.1.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/.libs/nanohttpd-2.2.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/.libs/nanohttpd-apache-fileupload-2.2.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/.libs/nanohttpd-nanolets-2.2.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/.libs/nanohttpd-samples-2.2.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/.libs/nanohttpd-webserver-2.2.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/.libs/nanohttpd-websocket-2.2.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
