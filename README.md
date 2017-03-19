@@ -18,3 +18,23 @@ SpigotServerManager (SSM) is a Spigot plugin for Minecraft servers which manages
 - ssm.enable
 - ssm.disable
 ```
+
+### Inheritance list:
+```yaml
+- ssm.*
+    - smm.version
+    - ssm.info
+    - ssm.enable
+    - ssm.disable
+    
+- ssm.version
+
+- ssm.info
+    - ssm.version
+    
+- ssm.enable
+    - ssm.info
+    
+- ssm.disable
+    - ssm.info
+```
