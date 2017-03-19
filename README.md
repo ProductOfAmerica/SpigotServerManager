@@ -1,5 +1,6 @@
 # SpigotServerManager
 SpigotServerManager (SSM) is a Spigot plugin for Minecraft servers which manages your server via HTTP requests.
+___
 
 ### Commands:
 
