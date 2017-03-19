@@ -14,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * Created by Lee on 3/7/2017.
  */
 public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
-    private static SpigotServerManager instance; // Super important -- do NOT remove --
+    private static SpigotServerManager instance;
     private boolean isUpToDate = true;
 
     @Override
