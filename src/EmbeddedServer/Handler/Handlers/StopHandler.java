@@ -1,8 +1,8 @@
 package EmbeddedServer.Handler.Handlers;
 
 import EmbeddedServer.Handler.HTTPHandler;
-import SpigotServerManager.Utils.Logger.SSMLogger;
 import EmbeddedServer.Utils.UnsupportedMimeException;
+import SpigotServerManager.Utils.Logger.SSMLogger;
 import fi.iki.elonen.NanoHTTPD.Response;
 import fi.iki.elonen.router.RouterNanoHTTPD;
 import org.bukkit.Bukkit;

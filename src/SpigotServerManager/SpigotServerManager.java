@@ -1,6 +1,6 @@
 package SpigotServerManager;
 
-import SpigotServerManager.Command.CommandHandler;
+import SpigotServerManager.CommandHandler.CommandHandler;
 import SpigotServerManager.Config.InitializeConfig;
 import SpigotServerManager.Config.Settings;
 import SpigotServerManager.Utils.HTTPServerInstance;
@@ -15,7 +15,14 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
     private static SpigotServerManager instance;
-    private boolean isUpToDate = true;
+    private boolean isUpToDate = true; //TODO fix this...add auto-updater
+
+    /**
+     * @return Returns an instance of this plugin.
+     */
+    public static SpigotServerManager getInstance() {
+        return instance;
+    }
 
     @Override
     public void onEnable() {
@@ -33,14 +40,7 @@ public class SpigotServerManager extends JavaPlugin implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        return new CommandHandler().executeCommand(sender, command, label, args);
-    }
-
-    /**
-     * @return Returns an instance of this plugin.
-     */
-    public static SpigotServerManager getInstance() {
-        return instance;
+        return new CommandHandler().executeCommand(sender, command, args);
     }
 
     public boolean isUpToDate() {

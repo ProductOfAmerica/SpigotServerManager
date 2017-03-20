@@ -1,8 +1,8 @@
 package EmbeddedServer.Handler.Handlers;
 
 import EmbeddedServer.Handler.HTTPHandler;
-import SpigotServerManager.Utils.Logger.SSMLogger;
 import EmbeddedServer.Utils.UnsupportedMimeException;
+import SpigotServerManager.Utils.Logger.SSMLogger;
 import SpigotServerManager.Utils.PropertiesFiler;
 import org.json.simple.parser.ParseException;
 
