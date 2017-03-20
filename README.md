@@ -48,6 +48,9 @@ ___
 5. Restart/reload your server for the settings to take effect.
 6. Test that your server is working by going to ```http://localhost:yourport#here/```.
 7. You should see this:  
+<kbd align="center">
+  <img src=".github/landing_page.png" width="350"/>
+</kbd>
 ![Whoops...looks like this moved](.github/landing_page.png)
 
 #### Config.yml explained:
