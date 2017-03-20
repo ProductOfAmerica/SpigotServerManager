@@ -40,7 +40,7 @@ SpigotServerManager (SSM) is a Spigot plugin for Minecraft servers which manages
 - If you change the port in the config.yml file, you **MUST DENY** users to that port. Otherwise, **they will have FULL access to your server**.  
    - If you're using ufw (ubuntu's default firewall) you must enter ```sudo ufw deny :portNumberHere:```. Example: ```sudo ufw deny 6969```.
    - I'm unsure how to do this from a Windows computer. Someone's help on that would be great.
-
+___
 1. Download plugin .jar file.
 2. Place this .jar file in your ```plugins``` folder.
 3. Run/reload your server.
