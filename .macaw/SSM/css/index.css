@@ -1,0 +1,517 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 0.875em/1.38 'Source Sans Pro';
+  color: #767676;
+}
+
+.background {
+  position: relative;
+  float: left;
+  z-index: 0;
+  width: 100%;
+  height: 550px;
+  background: url('../images/data-center-network-services.png') rgb(222, 222, 222);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.bigbar {
+  position: absolute;
+  top: 230px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  width: 32.42%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: rgb(225, 70, 75);
+}
+
+.functionality_text {
+  position: absolute;
+  top: 628px;
+  left: 0;
+  right: 0;
+  z-index: 18;
+  margin: 0 auto;
+  padding: 10px;
+  font: 600 2.286em/1.1 Raleway;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(68, 63, 63);
+}
+
+.info_holder {
+  position: absolute;
+  top: 684px;
+  left: 0;
+  right: 0;
+  z-index: 17;
+  width: 93.5833333333%;
+  height: 543px;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.littlebar {
+  position: absolute;
+  top: 683px;
+  left: 0;
+  right: 0;
+  z-index: 19;
+  width: 10.42%;
+  height: 1px;
+  margin: 0 auto;
+  background-color: rgb(225, 70, 75);
+}
+
+.main_test {
+  position: absolute;
+  top: 154px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 10px;
+  font: 700 3em/1 Raleway;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #e2e3dd;
+}
+
+.mobile {
+  position: relative;
+  float: left;
+  width: 33.33%;
+  height: 394px;
+}
+
+.mobile_image {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  z-index: 7;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  background-image: url('../images/network.png');
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: center center;
+}
+
+.mobile_text {
+  position: absolute;
+  top: 154px;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  width: 78.8071463753%;
+  min-height: 171px;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 1em;
+  text-align: center;
+  color: #767676;
+}
+
+.mobile_title {
+  position: absolute;
+  top: 132px;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  margin: 0 auto;
+  font-family: Raleway;
+  font-size: 1.143em;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.open_source,
+.simple {
+  position: relative;
+  float: left;
+  width: 33.3288562559%;
+  height: 394px;
+}
+
+.open_source_image {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  background-image: url('../images/coding.png');
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: center center;
+}
+
+.open_source_text {
+  position: absolute;
+  top: 154px;
+  left: 0;
+  right: 0;
+  z-index: 13;
+  width: 78.8071463753%;
+  min-height: 171px;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 1em;
+  text-align: center;
+  color: #767676;
+}
+
+.open_source_title {
+  position: absolute;
+  top: 132px;
+  left: 0;
+  right: 0;
+  z-index: 14;
+  margin: 0 auto;
+  font-family: Raleway;
+  font-size: 1.143em;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.simple_image {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+  background-image: url('../images/cube.png');
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: center center;
+}
+
+.simple_text {
+  position: absolute;
+  top: 154px;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  width: 78.8071463753%;
+  min-height: 171px;
+  margin: 0 auto;
+  padding: 5px;
+  font-size: 1em;
+  text-align: center;
+  color: #767676;
+}
+
+.simple_title {
+  position: absolute;
+  top: 132px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  margin: 0 auto;
+  font-family: Raleway;
+  font-size: 1.143em;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.ssm_text {
+  position: absolute;
+  top: 242px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  min-height: 41px;
+  margin: 0 auto;
+  font-family: Roboto;
+  font-size: 2.143em;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #e2e3dd;
+}
+
+._button {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #e1464b;
+  text-align: center;
+}
+
+._button:hover {
+  border-width: 1px;
+  border-style: solid;
+}
+
+._button-1 {
+  top: 1009px;
+  z-index: 20;
+  width: 20.0833333333%;
+  padding: 12px 35px;
+  border-radius: 3px;
+  font-family: Raleway;
+  font-size: 0.929em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+._button-1:hover {
+  border-color: #d65050;
+  background-color: rgba(0, 0, 0, 0);
+  color: #d65050;
+}
+
+._button-2 {
+  top: 339px;
+  z-index: 2;
+  width: 13.9166666666%;
+  height: 44px;
+  border-radius: 2px;
+  font-family: Ubuntu;
+  font-size: 1.214em;
+  font-weight: 500;
+  color: #e2e3dd;
+}
+
+._button-2:hover {
+  border-color: #e1464b;
+  background-color: rgba(166, 54, 58, 0.45);
+}
+
+@media(max-width: 860px) {
+  .background {
+    position: relative;
+    z-index: 0;
+  }
+
+  .main_test {
+    top: 110px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .bigbar,
+  .functionality_text,
+  .info_holder,
+  .littlebar,
+  .mobile .mobile_image,
+  .mobile .mobile_text,
+  .mobile .mobile_title,
+  .open_source .open_source_image,
+  .open_source .open_source_text,
+  .open_source .open_source_title,
+  .simple .simple_image,
+  .simple .simple_text,
+  .simple .simple_title,
+  .ssm_text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button-1 {
+    width: 20.1162790697%;
+    padding: 7px;
+  }
+}
+
+@media(max-width: 757px) {
+  body {
+    font-size: 0.875em;
+  }
+
+  .background {
+    position: relative;
+    z-index: 0;
+  }
+
+  .bigbar,
+  .functionality_text,
+  .info_holder,
+  .littlebar,
+  .main_test,
+  .mobile .mobile_image,
+  .mobile .mobile_text,
+  .mobile .mobile_title,
+  .open_source .open_source_image,
+  .open_source .open_source_text,
+  .open_source .open_source_title,
+  .simple .simple_image,
+  .simple .simple_text,
+  .simple .simple_title,
+  .ssm_text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button-1 {
+    top: 1063px;
+  }
+
+  ._button-2 {
+    width: 119px;
+  }
+}
+
+@media(max-width: 608px) {
+  .background {
+    position: relative;
+    z-index: 0;
+  }
+
+  .bigbar,
+  .functionality_text,
+  .info_holder,
+  .littlebar,
+  .main_test,
+  .mobile .mobile_image,
+  .mobile .mobile_text,
+  .mobile .mobile_title,
+  .open_source .open_source_image,
+  .open_source .open_source_text,
+  .open_source .open_source_title,
+  .simple .simple_image,
+  .simple .simple_text,
+  .simple .simple_title,
+  .ssm_text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button-1 {
+    width: 140px;
+  }
+}
+
+@media(max-width: 524px) {
+  body {
+    font-size: 0.875em;
+  }
+
+  .background {
+    position: relative;
+    z-index: 0;
+  }
+
+  .bigbar,
+  .functionality_text,
+  .info_holder,
+  .littlebar,
+  .main_test,
+  .mobile .mobile_image,
+  .mobile .mobile_text,
+  .mobile .mobile_title,
+  .open_source .open_source_image,
+  .open_source .open_source_text,
+  .open_source .open_source_title,
+  .simple .simple_image,
+  .simple .simple_text,
+  .simple .simple_title,
+  .ssm_text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button-1 {
+    top: 1117px;
+  }
+}
+
+@media(max-width: 398px) {
+  .background {
+    position: relative;
+    z-index: 0;
+  }
+
+  .main_test {
+    top: 75px;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .bigbar,
+  .functionality_text,
+  .info_holder,
+  .littlebar,
+  .mobile .mobile_image,
+  .mobile .mobile_text,
+  .mobile .mobile_title,
+  .open_source .open_source_image,
+  .open_source .open_source_text,
+  .open_source .open_source_title,
+  .simple .simple_image,
+  .simple .simple_text,
+  .simple .simple_title,
+  .ssm_text {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._button-1 {
+    top: 1152px;
+  }
+}
