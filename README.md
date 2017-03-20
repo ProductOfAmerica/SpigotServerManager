@@ -48,7 +48,7 @@ If you change the port in the config.yml file, you **MUST DENY** users to that p
 5. Restart/reload your server for the settings to take effect.
 6. Test that your server is working by going to ```http://localhost:yourport#here/```.
 7. You should see this:  
-![Whoops...looks like this moved](https://github.com/ProductOfAmerica/SpigotServerManager/tree/master/.github/landing_page.png)
+![Whoops...looks like this moved](.github/landing_page.png)
 
 #### Config.yml explained:
 SSM runs a local HTTP-server using Java. Because of this, we need to specify a port number for the HTTP-server to run on.
