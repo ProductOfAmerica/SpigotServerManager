@@ -18,7 +18,7 @@ public abstract class CommandSsm extends CommandBase {
 
     @Override
     public String commandArgs() {
-        return null; // This MUST be null. Overriding classes will fix this if need be.
+        return null; // This MUST be null. Overriding classes will return otherwise if need be.
     }
 
     @Override
@@ -28,7 +28,7 @@ public abstract class CommandSsm extends CommandBase {
 
     @Override
     public String permissionArgs() {
-        return null; // This MUST be null. Overriding classes will fix this if need be.
+        return null; // This MUST be null. Overriding classes will return otherwise if need be.
     }
 
     @Override

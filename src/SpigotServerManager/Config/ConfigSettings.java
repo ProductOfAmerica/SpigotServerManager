@@ -1,6 +1,10 @@
 package SpigotServerManager.Config;
 
-public enum Settings {
+/**
+ * The enum represents the name of the setting, and the object
+ * in its parameter is the default setting value.
+ */
+public enum ConfigSettings {
     port(6969),
     debug(true),
     username("admin"),
@@ -8,7 +12,7 @@ public enum Settings {
 
     private final Object setting;
 
-    Settings(Object setting) {
+    ConfigSettings(Object setting) {
         this.setting = setting;
     }
 

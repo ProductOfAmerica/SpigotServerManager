@@ -19,6 +19,7 @@ public class CommandHandler extends SSMInstance {
     private static final HashSet<CommandBase> commands = new HashSet<>();
 
     static {
+        // All commands that should be executed will be instantiated here
         Collections.addAll(commands,
                 new Ssm(), new SsmInfo(), new SsmDisable(), new SsmEnable()
         );
@@ -44,7 +45,6 @@ public class CommandHandler extends SSMInstance {
         return args.length <= 0
                 ? isBaseCommand(commandBase, cmd) // No command args. E.g. "/ssm"
                 : commandBase.commandArgs() != null && commandBase.commandArgs().equals(String.join(" ", args));
-
     }
 
     private boolean isBaseCommand(CommandBase regCmd, Command command) {

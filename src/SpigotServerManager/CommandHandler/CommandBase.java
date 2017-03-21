@@ -10,6 +10,6 @@ public abstract class CommandBase extends SSMInstance implements CommandType {
     public abstract void execute(CommandSender sender); // To be executed if the command is successful
 
     String getPermissionsNeeded() {
-        return permissionBase() + "." + permissionArgs(); // Contacts the base and all arguments together
+        return permissionBase() + "." + permissionArgs(); // Concatenates the base and arguments together
     }
 }

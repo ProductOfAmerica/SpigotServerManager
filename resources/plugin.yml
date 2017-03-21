@@ -29,14 +29,17 @@ permissions:
   ssm.version:
     description: Displays the version of the SSM plugin.
     default: true
+
   ssm.info:
     description: Displays information about the SSM.
     children:
       ssm.version: true
+
   ssm.enable:
     description: Enables the SSM. Check config.yml for settings.
     children:
       ssm.info: true
+
   ssm.disable:
     description: Disables the SSM.
     children:

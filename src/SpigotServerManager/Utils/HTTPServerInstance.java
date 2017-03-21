@@ -1,7 +1,7 @@
 package SpigotServerManager.Utils;
 
 import EmbeddedServer.EmbeddedServer;
-import SpigotServerManager.Config.Settings;
+import SpigotServerManager.Config.ConfigSettings;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -18,9 +18,9 @@ public abstract class HTTPServerInstance extends SSMInstance {
     public static void startServer() {
         if (!isRunning()) {
             embeddedServer = new EmbeddedServer(
-                    ssm.getConfig().getInt(Settings.port.name()),
-                    ssm.getConfig().getString(Settings.username.name()),
-                    ssm.getConfig().getString(Settings.password.name())
+                    ssm.getConfig().getInt(ConfigSettings.port.name()),
+                    ssm.getConfig().getString(ConfigSettings.username.name()),
+                    ssm.getConfig().getString(ConfigSettings.password.name())
             ).startServer();
 
             ssm.getServer().getOnlinePlayers().forEach(player -> {

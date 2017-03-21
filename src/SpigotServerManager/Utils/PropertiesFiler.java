@@ -18,6 +18,11 @@ public class PropertiesFiler extends SSMInstance {
                 .getParent().resolve("server.properties");
     }
 
+    /**
+     * Sets/creates a property value in the server.properties file.
+     * @param property The name of the property you wish to set.
+     * @param value    The value of the property you are modifying.
+     */
     public void setProperty(String property, String value) {
         try {
             FileInputStream in = new FileInputStream(path.toFile());
